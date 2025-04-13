@@ -1,0 +1,67 @@
+.sliderArea {
+    width: 100%;
+    position: relative;
+}
+
+.singleSlide {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caption {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    /* по умолчанию скрыто */
+}
+
+.caption h1 {
+    font-size: 2.5rem;
+}
+
+/* Анимация */
+.fadeIn {
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Активная точка */
+:global(.swiper-pagination-bullet-active) {
+    background-color: white !important;
+}
+
+/* Все точки */
+:global(.swiper-pagination-bullet) {
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 1;
+}
+
+/* Стрелки: общее */
+:global(.swiper-button-prev),
+:global(.swiper-button-next) {
+    color: white;
+}
+
+/* Ховер-эффект, если нужен */
+:global(.swiper-button-prev:hover),
+:global(.swiper-button-next:hover) {
+    color: #ddd;
+}

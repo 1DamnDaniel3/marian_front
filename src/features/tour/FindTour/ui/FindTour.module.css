@@ -1,0 +1,47 @@
+.searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+
+    padding-left: 25px; 
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: none;
+
+    border-radius: 999px 0 0 999px;
+
+    background-color: white;
+    color: black;
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+
+    &::placeholder {
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    &:focus {
+        border-color: rgb(255, 255, 255);
+        background-color: rgba(237, 216, 54, 0.7);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    }
+
+} 
+
+
+.button {
+    border-radius: 0 999px 999px 0;
+    /* овальная справа */
+    height: 100%;
+    padding: 0.75rem 2rem;
+    margin-left: -1px;
+    /* убрать дублирующую границу */
+    z-index: 1;
+}

@@ -1,0 +1,1 @@
+export {TourCard, toursApi} from './tour'

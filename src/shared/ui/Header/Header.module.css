@@ -1,92 +1,102 @@
 .header {
-    width: 100%;
-  }
-  
-  .headerArea {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-    z-index: 999;
-  }
-  
-  .mainHeader {
-    padding: 20px 0;
-  }
-  
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .logoCol {
-    flex: 0 0 16.6667%;
-  }
-  
-  .menuCol {
-    flex: 0 0 66.6667%;
-  }
-  
-  .btnCol {
-    flex: 0 0 16.6667%;
-  }
-  
-  .mobileCol {
-    flex: 0 0 100%;
-    display: none;
-  }
-  
-  .logo img {
-    max-height: 40px;
-  }
-  
-  .mainMenu nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .navigation li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  padding: 20px 0;
+}
+
+.logo {
+  max-height: 40px;
+  padding-left: 8%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15% 0 10px;
+
+  width: 100%;
+}
+
+
+.navigation {
+  list-style: none;
+  display: flex;
+  flex: 0, 0, 40%;
+  flex-shrink: 1;
+  justify-content: right;
+  padding-right: 40px;
+  margin-left: auto;
+  gap: 20px;
+
+
+
+
+  li {
     position: relative;
-    margin-right: 20px;
-  }
-  
-  .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    background-color: #fff;
-    list-style: none;
-    padding: 10px 0;
-  }
-  
-  .navigation li:hover .submenu {
-    display: block;
-  }
-  
-  .headerBtn .btn {
-    background-color: #ff6600;
-    padding: 10px 20px;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  @media (max-width: 991px) {
-    .mainMenu {
-      display: none;
+
+    a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #333;
+      white-space: nowrap;
+      &:hover{
+        color: #edd836;
+      }
     }
-  
-    .mobileCol {
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      list-style: none;
+      padding: 10px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+
+      li {
+        padding: 5px 15px;
+
+        a {
+          color: #333;
+
+          &:hover {
+            color: #edd836;
+          }
+        }
+      }
+    }
+
+    &:hover .submenu {
       display: block;
     }
+
   }
-  
+
+}
+
+.headerBtn .btn {
+  background-color: #edd836;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .mainMenu {
+    display: none;
+  }
+
+  .mobileCol {
+    display: block;
+  }
+}
