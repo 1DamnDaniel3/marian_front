@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import {APIs} from '../../../../shared'
 
-export const usePopularTours = () => {
+export const UsePopularTours = () => {
   const [tours, setTours] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

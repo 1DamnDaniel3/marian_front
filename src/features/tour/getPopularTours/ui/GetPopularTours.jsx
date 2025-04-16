@@ -1,9 +1,9 @@
-import { TourCard } from '@/entities/tour/ui/TourCard';
-import { usePopularTours } from '../model/usePopularTours';
+import { TourCard } from '../../../../entities';
+import { UsePopularTours } from '../model/UsePopularTours';
 import s from './GetPopularTours.module.css';
 
 export const GetPopularTours = () => {
-  const { tours, loading, error } = usePopularTours();
+  const { tours, loading, error } = UsePopularTours();
 
   if (loading) return <p>Загрузка...</p>;
   if (error) return <p>Ошибка загрузки туров</p>;
@@ -15,7 +15,7 @@ export const GetPopularTours = () => {
         {tours.map((tour) => (
           <TourCard
             key={tour.id}
-            image={tour.image}
+            image={tour.img_url}
             title={tour.title}
             duration={tour.duration}
             price={tour.price}

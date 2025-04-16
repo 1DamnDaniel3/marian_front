@@ -1,12 +1,14 @@
 import React from "react"
 import { Button } from "../../../shared";
+import placeholder from '../assets/placeholder.jpg'
 import s from './TourCard.module.css';
 
 export const TourCard = (props) => {
     return (
         <article className={s.card}>
+            {console.log(`ССЫЛКА: ${props.image}`)}
             <img
-                src={props.image}
+                src={props.image || placeholder}
                 alt={props.title}
                 className={s.image} />
 

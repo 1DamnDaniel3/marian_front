@@ -1,1 +1,1 @@
-export {FindTour} from './tour'
+export {FindTour, GetPopularTours} from './tour'

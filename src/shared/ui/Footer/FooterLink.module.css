@@ -1,0 +1,14 @@
+.link {
+    margin-bottom: 8px;
+  }
+  
+  .link a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .link a:hover {
+    color: #fff;
+  }
+  

@@ -1,0 +1,30 @@
+.noTours {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: #EAEAEA;
+    box-shadow:
+        inset 0 10px 20px rgba(0, 0, 0, 0.1),
+        /* верхняя внутренняя тень */
+        inset 0 -10px 20px rgba(0, 0, 0, 0.1);
+        /* нижняя внутренняя тень */
+
+
+    h1 {
+        font-size: 42px;
+        padding-top: 60px;
+    }
+
+    h2 {
+        font-size: 24px;
+        color: rgb(111, 111, 111);
+    }
+}
+
+.button {
+    margin-top: 45px;
+    margin-bottom: 25px;
+}

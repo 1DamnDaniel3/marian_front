@@ -1,0 +1,1 @@
+export {GetPopularTours} from './ui/GetPopularTours'
