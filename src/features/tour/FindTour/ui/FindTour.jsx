@@ -17,7 +17,7 @@ export const FindTour = () => {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Куда мечтаете поехать?"
         className={s.input}
-        style = {{width: "300px", height: "36px"}}
+        style = {{width: "300px", height: "62px"}}
       />
       <Button
         onClick={handleSearch}

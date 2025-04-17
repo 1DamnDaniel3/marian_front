@@ -3,3 +3,5 @@ export {Button} from './Button'
 export {Input} from './Input'
 export {AdvantageCard} from './AdvantageCard'
 export {FooterLink, FooterSection, SubscribeForm} from './Footer'
+export {HeroBlock} from './HeroBlock'
+

@@ -1,0 +1,41 @@
+.AboutPage{
+    width: 100%;
+    height: 100%;
+
+    .whyUs{
+        display: flex;
+        font-size: 42px;
+        padding: 40px 0 0 180px;
+        justify-content: flex-start;
+        background-color: #EAEAEA;
+    }
+}
+
+.advantages{
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    white-space: wrap;
+}
+
+.otherAdv{
+    background-color: rgb(101, 101, 101);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 100px;
+
+    .card{
+        display: flex;
+        background-color: rgb(60, 60, 60);
+
+        h3{
+            font-size: 42px;
+            color: #e74c3c;;
+        }
+        p{
+            color: #EAEAEA;
+        }
+    }
+}

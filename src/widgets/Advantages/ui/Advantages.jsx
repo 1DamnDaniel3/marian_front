@@ -1,35 +1,18 @@
 import { AdvantageCard } from '../../../shared'
 import s from './Advantages.module.css'
 
-const advantages = [
-    {
-        title: '🛫 10+ направлений',
-        description: 'От Калининграда до Камчатки',
-    },
-    {
-        title: '👍 98% положительных отзывов',
-        description: 'Нас рекомендуют друзьям',
-    },
-    {
-        title: '💼 5 лет опыта',
-        description: 'Профессиональная организация',
-    },
-]
 
-export const Advantages = () => {
+
+export const Advantages = ({ items, title, className, cardClassName }) => {
+
     return (
-        <section className={s.advantages}>
-
-            <div className={s.advantagesGrid}>
-                {advantages.map((adv, i) => (
-                    <AdvantageCard
-                        key={i}
-                        title={adv.title}
-                        description={adv.description}
-                    />
-                ))}
-            </div>
-
+        <section className={`${s.advantages} ${className || ''}`}>
+          {title && <h2 className={s.title}>{title}</h2>}
+          <div className={s.advantagesGrid}>
+            {items.map((adv, i) => (
+              <AdvantageCard key={i} {...adv} className={cardClassName}/>
+            ))}
+          </div>
         </section>
-    )
+      )
 }

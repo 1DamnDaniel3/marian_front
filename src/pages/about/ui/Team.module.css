@@ -1,0 +1,46 @@
+.team {
+    padding: 60px 0;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  
+  .member {
+    text-align: center;
+  }
+  
+  .photo {
+    width: 200px;        /* фиксированная ширина */
+    height: 200px;       /* такая же высота для квадрата */
+    border-radius: 50%;  /* делает его кругом */
+    object-fit: cover;   /* чтобы изображение красиво вписывалось */
+    margin: 0 auto;      /* выравнивание по центру, если нужно */
+    display: block;
+  }
+  
+  
+  .name {
+    font-size: 20px;
+    margin-top: 12px;
+  }
+  
+  .position {
+    font-weight: 500;
+    color: #666;
+    margin: 4px 0;
+  }
+  
+  .bio {
+    font-size: 14px;
+    color: #888;
+  }
+  

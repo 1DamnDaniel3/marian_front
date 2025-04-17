@@ -17,7 +17,7 @@ export const Header = () => {
                 {/* Main Menu */}
 
                     <ul className={s.navigation}>
-                        <li><a href="/">Главная</a></li>
+                        <li><a href="/Home">Главная</a></li>
                         <li><a href="/about">О нас</a></li>
                         <li><a href="/regions">Регионы</a></li>
                         <li>

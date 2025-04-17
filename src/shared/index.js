@@ -6,4 +6,5 @@ export {
     Input,
     AdvantageCard,
     FooterLink, FooterSection, SubscribeForm,
+    HeroBlock,
 } from './ui'
