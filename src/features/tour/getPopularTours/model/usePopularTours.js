@@ -8,8 +8,8 @@ export const UsePopularTours = () => {
 
   useEffect(() => {
     APIs.tour.getPopularTours()
-      .then(responce => {
-        setTours(responce.data)
+      .then(response => {
+        setTours(response.data)
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));

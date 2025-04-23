@@ -1,5 +1,7 @@
 import {toursApi} from '../../entities'
+import {regionApi} from '../../entities'
 
 export const APIs = {
-    tour: toursApi
+    tour: toursApi,
+    region: regionApi,
 }
