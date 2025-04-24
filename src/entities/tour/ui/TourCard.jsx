@@ -6,7 +6,6 @@ import s from './TourCard.module.css';
 export const TourCard = (props) => {
     return (
         <article className={s.card}>
-            {console.log(`ССЫЛКА: ${props.image}`)}
             <img
                 src={props.image || placeholder}
                 alt={props.title}
@@ -17,13 +16,14 @@ export const TourCard = (props) => {
 
                 <div className={s.info}>
                     <span>{props.duration}</span>
-                    <span>{props.price}</span>
+                    <span>{props.persons}</span>
+                    <span>{props.description}</span>
                 </div>
-
+                <h2>{props.price}</h2>
                 <Button
                     className={s.button}
                     onClick={props.onClick}
-                    children={"Подробнее"} />
+                    children={props.children} />
             </div>
         </article>
     );

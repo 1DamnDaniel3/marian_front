@@ -8,7 +8,7 @@ export const Regions = () => {
     return(
         <div>
             <MainHeader/>
-            <HeroBlock image={heroImg} heroName={"Регионы"}/>
+            <HeroBlock image={heroImg} heroTitle={"Регионы"} heroDescript={"Регионы"}/>
             <RegionList/>
             <MainFooter/>
         </div>

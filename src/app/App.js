@@ -1,4 +1,4 @@
-import { Home, About, Regions } from '../pages'
+import { Home, About, Regions, Tours } from '../pages'
 import { Route, Routes } from "react-router-dom";
 import style from './global.css'
 
@@ -10,6 +10,7 @@ const App = () => {
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Regions" element={<Regions />} />
+        <Route path="/Tours" element={<Tours />} />
         
       </Routes>
 

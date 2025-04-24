@@ -13,7 +13,7 @@ export const About = () => {
     return(
         <div className={s.AboutPage}>
             <MainHeader/>
-            <HeroBlock image={heroImg} heroName={"О нас"}/>
+            <HeroBlock image={heroImg} heroTitle={"О нас"} heroDescript={"О нас"}/>
             <Info/>
             <h1 className={s.whyUs}> Почему выбирают нас </h1>
             <Advantages items={aboutAdvantages} className={s.advantages}/>

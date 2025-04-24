@@ -1,11 +1,11 @@
 import s from './HeroBlock.module.css'
 
 
-export const HeroBlock = ({image, heroName}) => {
+export const HeroBlock = ({image, heroTitle, heroDescript}) => {
     return (
         <div className={s.HeroBlock}>
-            <span>{heroName}</span>
-            <h1>{heroName}</h1>
+            <span>{heroTitle}</span>
+            <h1>{heroDescript}</h1>
             <img src={image} alt="" />
         </div>
     )

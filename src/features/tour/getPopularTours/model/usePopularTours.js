@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {APIs} from '../../../../shared'
+import { APIs } from '../../../../shared'
 
 export const UsePopularTours = () => {
   const [tours, setTours] = useState([]);
