@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { APIs } from '../../shared';
 
 const initialState = {
   user: null,
@@ -23,6 +24,15 @@ const authSlice = createSlice({
     }
   }
 });
+
+export const logout = () => async (dispatch) => {
+  try {
+    const responce = await APIs.user.logout();
+    dispatch(logoutSuccess());
+  } catch (error) {
+    console.error('Logout failed:', error);
+  }
+};
 
 export const { loginSuccess, logoutSuccess } = authSlice.actions;
 export const selectUser = (state) => state.auth.user;

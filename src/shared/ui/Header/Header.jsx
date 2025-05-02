@@ -2,16 +2,17 @@ import React from "react";
 import logo from "../../assets/logo.png";
 import s from "./Header.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutSuccess, selectIsLoggedIn } from "../../../app/model/authSlice";
+import { logout, selectIsLoggedIn, selectUser } from "../../../app/model/authSlice";
 import { Link } from 'react-router-dom';
 
 export const Header = () => {
 
     const dispatch = useDispatch()
     const isLoggin = useSelector(selectIsLoggedIn)
+    const user = useSelector(selectUser)
 
     const handleLogout = () => {
-        dispatch(logoutSuccess())
+        dispatch(logout());
     }
 
     return (
@@ -46,14 +47,33 @@ export const Header = () => {
                         </ul>
                     </li>
                     <li><a href="/contact">Контакты</a></li>
+                    
+                    {/* ===============  ADMIN PANEL ====================== */}
+                    {user && user.role === "admin" && (
+                        <>
+                        <li><a href="/manage/users">Пользователи</a></li>
+                        <li><a href="/manage/tours">Туры</a></li>
+                        </>
+                    )}
+                    {user && user.role === "moderator" && (
+                        <>
+                        <li><a href="/manage/tours">Туры</a></li>
+                        </>
+                    )}
                 </ul>
 
 
                 {/* Button */}
                 <div className={s.headerBtn}>
-                    <a href="/tours" className={s.btn}>
-                        Выбрать тур
-                    </a>
+                    {isLoggin === true &&
+                        <a href="/tours" className={s.btn}>
+                            Выбрать тур
+                        </a>}
+                    {isLoggin === false &&
+                        <a href="/registration" className={s.btn}>
+                            Выбрать тур
+                        </a>}
+
                 </div>
                 {!isLoggin ? (
                     <Link className={s.join} to="/registration">Войти</Link>
