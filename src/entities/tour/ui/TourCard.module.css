@@ -7,6 +7,7 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   height: 100%;
+  width: 400px;
 }
 
 .card:hover {
@@ -27,6 +28,10 @@
   justify-content: space-between;
   padding: 1rem;
   flex-grow: 1;
+
+  img{
+    width: 15px;
+  }
 }
 
 .content h3 {

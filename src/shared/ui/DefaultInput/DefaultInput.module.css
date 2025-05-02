@@ -1,0 +1,39 @@
+.inputWrapper {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 240px;
+    height: 32px;
+    gap: 8px;
+}
+
+.input {
+    flex: 1;
+    height: 32px;
+    border-radius: 8px;
+    padding: 0 8px 0 8px;
+
+    border: none;
+    border-bottom: 2px solid rgb(120, 120, 120);
+}
+
+.input:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(200, 0, 0);
+}
+
+.toggleButton {
+    width: 32px;
+    border-radius: 8px;
+    padding-top: 4px;
+
+    background: white;
+    border: none;
+    border-bottom: 2px solid rgb(120, 120, 120);
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.toggleButton img {
+    width: 20px;
+}

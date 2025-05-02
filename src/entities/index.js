@@ -1,2 +1,6 @@
-export {TourCard, toursApi} from './tour'
-export {RegionCard, regionApi} from './region'
+export { TourCard, toursApi } from './tour'
+export { RegionCard, regionApi } from './region'
+export { ActivityCard, activityApi } from './activity'
+export { customTourApi } from './customTour'
+export { ReviewCard, reviewApi } from './review'
+export { userApi } from './user'

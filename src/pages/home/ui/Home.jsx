@@ -2,6 +2,7 @@ import React from "react";
 import s from './Home.module.css'
 import { MainHeader, TourFinder, Advantages, PopularTours, FindNoTours, MainFooter } from "../../../widgets";
 import { Slider } from "./Slider";
+import { useNavigate } from "react-router-dom";
 
 const homeAdvantages  = [
     {
@@ -19,13 +20,16 @@ const homeAdvantages  = [
 ]
 
 export const Home = () => {
+
+    const navigate = useNavigate()
+
     return(
         <>
         <MainHeader/>
         <Slider/>
         <TourFinder/>
         <Advantages items={homeAdvantages}/>
-        <PopularTours/>
+        <PopularTours children={"Подробнее"} onClick={()=> navigate('/tours')}/>
         <FindNoTours/>
         <MainFooter/>
         </>

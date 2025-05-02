@@ -1,8 +1,11 @@
 export { MainHeader } from './MainHeader'
-export { TourFinder } from './TourFinder'
+export { TourFinder, PopularTours, FindNoTours, TourDetails } from './tours'
 export { Advantages } from './Advantages'
-export { PopularTours } from './PopularTours'
-export { FindNoTours } from './FindNoTours'
 export { MainFooter } from './MainFooter'
-export { RegionList } from './RegionList'
-export { ToursList } from './ToursList'
+export { RegionList } from './regions'
+export { ToursList } from './tours/ToursList'
+export { ActivitiesList } from './activities'
+export { Review } from './Review'
+export { Authentication, authenticateReducer, authProcessSwitch } from './Authentication'
+
+

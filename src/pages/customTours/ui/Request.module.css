@@ -1,0 +1,75 @@
+.request {
+  padding: 50px 0 50px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+
+}
+
+.content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+
+  h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  h3 {
+    color: #34495e;
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #ecf0f1;
+  }
+  
+  p {
+    color: #7f8c8d;
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+/* Стили для кнопки (можно настроить под ваш компонент Button) */
+.button {
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+
+
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+}

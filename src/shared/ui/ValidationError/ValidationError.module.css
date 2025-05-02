@@ -1,0 +1,42 @@
+.warningText {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease;
+    color: red;
+    font-size: x-small;
+    background-color: white;
+    padding: 0;
+    border: none;
+}
+
+.warningText.show {
+    opacity: 1;
+    height: 20px;
+    padding: 4px; /* Чтоб не схлопывался контент */
+    border-radius: 6px;
+    border-bottom: 2px solid red;
+}
+
+.warningText.changing {
+    animation: blinkBorder 0.5s ease-in-out 2, shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-2px); }
+}
+
+@keyframes blinkBorder {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0;
+    }
+
+    50% {
+        box-shadow: 0 2px 10px rgba(255, 0, 0, 0.5);
+    }
+}

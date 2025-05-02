@@ -1,13 +1,17 @@
 import { useState } from "react"
 import { Input, Button } from "../../../../shared"
 import s from './FindTour.module.css'
+import { useNavigate } from "react-router-dom"
 
 export const FindTour = () => {
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+
 
   const handleSearch = () => {
     // Тут можно вызывать фильтрацию, роутинг, API и т.п.
-    console.log("Поиск тура по:", query)
+    navigate("/tours")
   }
 
   return (

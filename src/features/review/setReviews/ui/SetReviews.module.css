@@ -1,0 +1,9 @@
+.setReviews {
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 40px;
+    width: 100%;
+    min-height: 500px;
+}

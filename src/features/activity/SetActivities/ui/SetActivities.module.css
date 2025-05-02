@@ -1,0 +1,38 @@
+/* SetActivities.module.css */
+
+.activitiesWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    padding: 40px 40px 40px 40px;
+    gap: 16px;
+    
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+
+    width: 250px;
+    height: 100px;
+  }
+  
+  .card:hover {
+    background: #f7f7f7;
+  }
+  
+  .selected {
+    border-color: #ff7f50;
+    background-color: #ffece2;
+  }
+  

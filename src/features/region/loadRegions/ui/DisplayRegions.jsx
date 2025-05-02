@@ -2,10 +2,10 @@ import { RegionCard } from "../../../../entities"
 import { UseLoadRegions } from "../model/UseLoadRegions"
 import s from './DisplayRegions.module.css'
 
-export const DisplayRegions = () => {
+export const DisplayRegions = ({onClick, children}) => {
 
     const { regions, loading, error } = UseLoadRegions();
-    // console.log(regions)
+
 
 
 
@@ -19,12 +19,13 @@ export const DisplayRegions = () => {
                     key={region.id}
                     image={region.img_url}
                     name={region.name}
-                    season={region.season}
+                    season={region.season}s
                     label={"Достопримечательности: "}
                     landmark1={region.landmarks[0]?.length > 0 && `•${region.landmarks[0]}`}
                     landmark2={region.landmarks[1]?.length > 0 && `•${region.landmarks[1]}`}
                     landmark3={region.landmarks[2]?.length > 0 && `•${region.landmarks[2]}`}
-                    children={'Перейти к турам'}
+                    children={children}
+                    onClick={()=>onClick(region.id, region.name)}
                 />
             ))}
         </div>

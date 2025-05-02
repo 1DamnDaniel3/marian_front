@@ -1,0 +1,21 @@
+.wrapper {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://i.postimg.cc/CMnxNpB1/green-hill-with-roads-houses-trees.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); 
+    z-index: -1;
+}

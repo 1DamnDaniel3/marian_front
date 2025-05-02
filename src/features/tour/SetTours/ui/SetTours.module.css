@@ -1,0 +1,23 @@
+.RegionTours {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 24px;
+    margin-top: 16px;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+  }
+  
+  
+  
+  .regionTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 0 40px 0;
+    
+}

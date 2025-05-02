@@ -1,0 +1,21 @@
+.ToursList {
+  display: flex;
+  flex-direction: column;
+  gap: 48px; 
+  padding: 24px;
+  width: 100%;
+
+}
+
+.SetTours {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 20px;
+  padding: 0 10px 0 10px;
+
+  align-items: center;
+  width: 100%;
+
+}
