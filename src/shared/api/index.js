@@ -1,4 +1,4 @@
-import { toursApi, activityApi, regionApi, customTourApi, reviewApi, userApi } from '../../entities'
+import { toursApi, activityApi, regionApi, customTourApi, reviewApi, userApi, applicationApi } from '../../entities'
 
 
 export const APIs = {
@@ -8,4 +8,5 @@ export const APIs = {
     custom: customTourApi,
     review: reviewApi,
     user: userApi,
+    application: applicationApi,
 }

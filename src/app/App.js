@@ -16,9 +16,9 @@ const App = () => {
           <Route path="/About" element={<About />} />
           <Route path="/reviews" element={<Reviews />} />
 
-          <Route path="/regions" element={<ProtectedRoute role = "user"> <Regions /></ProtectedRoute>} />
-          <Route path="/tours" element={<ProtectedRoute role = "user"><Tours /></ProtectedRoute>} />
-          <Route path="/custom" element={<ProtectedRoute role = "user"><Custom /></ProtectedRoute>} />
+          <Route path="/regions" element={<ProtectedRoute roles = {['user', 'moderator']}> <Regions /></ProtectedRoute>} />
+          <Route path="/tours" element={<ProtectedRoute roles = {['user', 'moderator']}><Tours /></ProtectedRoute>} />
+          <Route path="/custom" element={<ProtectedRoute roles = {['user', 'moderator']}><Custom /></ProtectedRoute>} />
 
 
 

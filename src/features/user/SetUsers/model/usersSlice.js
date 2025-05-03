@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { APIs } from "../../../../shared";
 
 // Асинхронные Thunks
 export const fetchUsers = createAsyncThunk(
     "users/fetchUsers",
     async (_, { rejectWithValue }) => {
         try {
-            const response = await fetch("/api/users");
-            if (!response.ok) throw new Error("Ошибка загрузки");
+            const response = await APIs.user.getUsers();
+            if (!response) throw new Error("Ошибка загрузки");
             return await response.json();
         } catch (error) {
             return rejectWithValue(error.message);
@@ -16,10 +17,10 @@ export const fetchUsers = createAsyncThunk(
 
 export const deleteUser = createAsyncThunk(
     "users/deleteUser",
-    async (userId, { rejectWithValue }) => {
+    async (id, { rejectWithValue }) => {
         try {
-            await fetch(`/api/users/${userId}`, { method: "DELETE" });
-            return userId; // Возвращаем ID для удаления из стейта
+            APIs.user.deleteUsers();
+            return id; 
         } catch (error) {
             return rejectWithValue(error.message);
         }
@@ -28,14 +29,10 @@ export const deleteUser = createAsyncThunk(
 
 export const updateUserRole = createAsyncThunk(
     "users/updateUserRole",
-    async ({ userId, newRole }, { rejectWithValue }) => {
+    async ({ id, newRole }, { rejectWithValue }) => {
         try {
-            await fetch(`/api/users/${userId}/role`, {
-                method: "PATCH",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ role: newRole }),
-            });
-            return { userId, newRole };
+            APIs.user.updateUsers(id, newRole)
+            return { id, newRole };
         } catch (error) {
             return rejectWithValue(error.message);
         }
@@ -50,10 +47,10 @@ const usersSlice = createSlice({
         loading: false,
         error: null,
     },
-    reducers: {}, // Синхронные редьюсеры (если нужны)
+    reducers: {}, 
     extraReducers: (builder) => {
         builder
-            // Загрузка пользователей
+       
             .addCase(fetchUsers.pending, (state) => {
                 state.loading = true;
                 state.error = null;

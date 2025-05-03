@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { selectIsLoggedIn, selectUser } from '../model/authSlice';
 
-export const ProtectedRoute = ({ children, role }) => {
+export const ProtectedRoute = ({ children, roles }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser)
 
@@ -14,9 +14,11 @@ export const ProtectedRoute = ({ children, role }) => {
   if (user.role === 'admin') {
     return children;
   }
-  if (user.role !== role) {
+  if (user.role === 'moderator') {
+    return children
+  }
+  if (!roles.includes(user.role)) {
     return <Navigate to="/home" replace />;
-
   }
 
   return children;

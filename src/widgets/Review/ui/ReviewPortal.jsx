@@ -57,8 +57,7 @@ export const ReviewPortal = ({ onClose }) => {
             ...info,
             user_id: user.id
         }
-        // Здесь будет логика отправки отзыва
-        console.log('Отзыв отправлен', reviewData);
+        alert("Отзыв отправлен!")
         const response = APIs.review.addReview(reviewData)
         console.log(response)
         onClose();
