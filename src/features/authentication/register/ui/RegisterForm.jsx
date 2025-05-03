@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Button, DefaultInput, validatePassword, ValidationError, checkForMinLen, validateEmail } from "../../../../shared";
+import { Button, DefaultInput, validatePassword, ValidationError, checkForMinLen, validateEmail, APIs } from "../../../../shared";
 import s from "./RegisterForm.module.css";
 import { registerApi } from "../api/api";
 import { registerSuccess } from "../model/registerSlice";
+import image from '../../../../shared/assets/logo.png'
+
 
 export const RegisterForm = (props) => {
 
@@ -24,7 +26,7 @@ export const RegisterForm = (props) => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
-        password: "",
+        password_hash: "",
     });
     const [isChanging, setIsChanging] = useState(false);
     const [showName, setShowName] = useState(false);
@@ -33,7 +35,7 @@ export const RegisterForm = (props) => {
     // ФУНКЦИИ
     const showWarningMessage = () => {
         setIsChanging(true);
-        setTimeout(() => setIsChanging(false), 500); // Убираем эффект через 0.5 сек
+        setTimeout(() => setIsChanging(false), 500);
     }
 
     // ХЕНДЛЕРЫ
@@ -46,6 +48,9 @@ export const RegisterForm = (props) => {
     };
 
     const handleRegistration = async () => {
+
+        console.log(formData)
+
         if (!checkForMinLen(formData.name, 3)) {
             setWarningText(4)
             showWarningMessage()
@@ -56,7 +61,7 @@ export const RegisterForm = (props) => {
             showWarningMessage()
             return
         }
-        else if (!formData.password) {
+        else if (!formData.password_hash) {
             setWarningText(1)
             showWarningMessage()
             return
@@ -64,7 +69,7 @@ export const RegisterForm = (props) => {
 
         try {
             setWarningText(0)
-            const response = await registerApi(formData);
+            const response = await APIs.user.registerUser(formData);
             dispatch(registerSuccess());
             props.onRegister()
         }
@@ -77,12 +82,12 @@ export const RegisterForm = (props) => {
 
     // ЭФФЕКТЫ
     useEffect(() => {
-        const newWarning = validatePassword(formData.password);
+        const newWarning = validatePassword(formData.password_hash);
         if (newWarning !== warningText) {
             showWarningMessage()
         }
         setWarningText(newWarning);
-    }, [formData.password]); // добавлять сюда warningText нельзя, а то предупреждения не будут работать
+    }, [formData.password_hash]); // добавлять сюда warningText нельзя, а то предупреждения не будут работать
 
     useEffect(() => {
         setTimeout(() => setShowName(true), 100); // Задержка для плавности
@@ -92,8 +97,8 @@ export const RegisterForm = (props) => {
     return (
         <div className={s.r_form}>
             <div className={s.logo_label}>
-                <img src='/icons/tomato.svg' className={s.logo_img} alt="Logo" />
-                <span className={s.label}>Pomodoro PLAN</span>
+                <img src={image} className={s.logo_img} alt="Logo" />
+                <span className={s.label}>Welcome</span>
             </div>
 
             <div className={s.inputs}>
@@ -101,7 +106,7 @@ export const RegisterForm = (props) => {
                     <DefaultInput type='text' placeholder='Имя' name="name" value={formData.name} onChange={handleChange} />
                 </div>
                 <DefaultInput type='text' placeholder='Email' name="email" value={formData.email} onChange={handleChange} />
-                <DefaultInput type='password' placeholder='Пароль' name="password" value={formData.password} onChange={handleChange} />
+                <DefaultInput type='password_hash' placeholder='Пароль' name="password_hash" value={formData.password_hash} onChange={handleChange} />
 
                 <ValidationError warningText={warningText} isChanging={isChanging} warningMessages={warningMessages} />
 

@@ -1,1 +1,1 @@
-export const selectIsRegProcess = (state) => state.authenticate.selectIsRegProcess;
+export const selectIsRegProcess = (state) => state.authenticate.isRegistrationProcess;

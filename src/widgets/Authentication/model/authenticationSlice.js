@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    isRegistrationProcess: true
+    isRegistrationProcess: false
 };
 
 const authenticateSlice = createSlice({

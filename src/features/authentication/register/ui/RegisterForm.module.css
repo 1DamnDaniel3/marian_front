@@ -7,7 +7,7 @@
 
     width: 500px;
     padding: 96px 0 96px 0;
-    background-color: rgb(229, 208, 172);
+    background-color: rgb(244, 244, 244);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
     border-radius: 12px;
 
@@ -29,7 +29,7 @@
 }
 
 .logo_img {
-    height: 96px;
+    height: 50px;
     width: auto;
 }
 
@@ -52,7 +52,8 @@ span {
 .warningText.show {
     opacity: 1;
     height: 20px;
-    padding: 4px; /* Чтоб не схлопывался контент */
+    padding: 4px;
+    /* Чтоб не схлопывался контент */
     border-radius: 6px;
     border-bottom: 2px solid red;
 }
@@ -62,10 +63,23 @@ span {
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-3px); }
-    50% { transform: translateX(3px); }
-    75% { transform: translateX(-2px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-3px);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
 }
 
 @keyframes blinkBorder {
@@ -95,7 +109,8 @@ span {
 }
 
 .animatedField.show {
-    max-height: 60px; /* Подберите подходящее значение */
+    max-height: 60px;
+    /* Подберите подходящее значение */
     opacity: 1;
 }
 

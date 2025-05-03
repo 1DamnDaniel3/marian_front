@@ -9,6 +9,7 @@ export const userApi = {
     authCheck: async (data) => api.get('/auth/check', data),
 
     getUsers: async (data) => api.get('/users', data),
+    registerUser: async (data) => api.post('/users/registration', data),
     deleteUsers: async (id) => api.delete(`/users/${id}`),
     updateUsers: async (id, data) => api.put(`/users/${id}`, data),
     

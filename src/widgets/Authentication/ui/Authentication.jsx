@@ -8,8 +8,8 @@ export const Authentication = (props) => {
     const dispatch = useDispatch();
     const isRegProcess = useSelector(selectIsRegProcess)
 
+
     const handleToggle = () => {
-        console.log('Должено было переключиться на логин')
         dispatch(authProcessSwitch())
     }
 
