@@ -1,2 +1,3 @@
-export {TourCard} from './ui/TourCard'
-export {toursApi} from './api/api'
+export { TourCard } from './ui/TourCard'
+export { TCard } from './ui/adminSection/TCard'
+export { toursApi } from './api/api'

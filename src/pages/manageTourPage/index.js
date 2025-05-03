@@ -1,0 +1,1 @@
+export { ManageTourPage } from './ui/ManageTourPage'

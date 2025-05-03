@@ -1,4 +1,4 @@
-import { AuthPage, Home, About, Regions, Tours, Custom, Reviews } from '../pages'
+import { AuthPage, Home, About, Regions, Tours, Custom, Reviews, ManageUsers, ManageTourPage } from '../pages'
 import { Route, Routes, Navigate } from "react-router-dom";
 import { ProtectedRoute } from './hoc/ProtectedRoute'
 import { AuthProvider } from './context/AuthContext';
@@ -19,6 +19,9 @@ const App = () => {
           <Route path="/regions" element={<ProtectedRoute roles = {['user', 'moderator']}> <Regions /></ProtectedRoute>} />
           <Route path="/tours" element={<ProtectedRoute roles = {['user', 'moderator']}><Tours /></ProtectedRoute>} />
           <Route path="/custom" element={<ProtectedRoute roles = {['user', 'moderator']}><Custom /></ProtectedRoute>} />
+          
+          <Route path="/manage/users" element={<ProtectedRoute roles= {['admin']}> <ManageUsers/> </ProtectedRoute>} />
+          <Route path="/manage/tours" element={<ProtectedRoute roles = {['admin', 'moderator']}><ManageTourPage /></ProtectedRoute>} />
 
 
 

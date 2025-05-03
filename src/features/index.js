@@ -6,3 +6,7 @@ export {
     RegisterForm, registerReducer, registerApi, registerSuccess,
     LoginForm, loginReducer, loginApi, loginSuccess, logout
 } from './authentication'
+export {
+    SetUsers, usersReducer
+} from './user'
+export {ManageTours, toursReducer} from './admin'

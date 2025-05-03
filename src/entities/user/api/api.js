@@ -12,6 +12,6 @@ export const userApi = {
     registerUser: async (data) => api.post('/users/registration', data),
     deleteUsers: async (id) => api.delete(`/users/${id}`),
     updateUsers: async (id, data) => api.put(`/users/${id}`, data),
-    
+
 
 }

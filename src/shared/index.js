@@ -8,6 +8,7 @@ export {
     FooterLink, FooterSection, SubscribeForm,
     HeroBlock,
     DefaultInput,
-    ValidationError
+    ValidationError,
+    Modal,
 } from './ui'
 export {validateEmail, validatePassword, checkForMinLen} from './lib'

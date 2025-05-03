@@ -14,8 +14,22 @@ export const fetchActivities = createAsyncThunk(
     }
 );
 
+export const fetchAllActivities = createAsyncThunk(
+    'activities/fetchAllActivities',
+    async (_, thunkAPI) => {
+        try {
+            const response = await APIs.activity.getActivities();
+            return response.data;
+        } catch (error) {
+            console.error("Error fetching activities:", error);
+            return thunkAPI.rejectWithValue(error.message);
+        }
+    }
+);
+
 const initialState = {
     list: [],
+    allActivities: [],
     loading: false,
     error: null,
 };
@@ -39,7 +53,21 @@ const activitiesSlice = createSlice({
             .addCase(fetchActivities.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
-            });
+            })
+            // Fetch ALL activities 
+
+            .addCase(fetchAllActivities.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(fetchAllActivities.fulfilled, (state, action) => {
+                state.loading = false;
+                state.allActivities = action.payload;
+            })
+            .addCase(fetchAllActivities.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
     },
 });
 

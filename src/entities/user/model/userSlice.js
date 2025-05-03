@@ -1,25 +1,25 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { APIs } from "../../../../shared";
 
-
+// Асинхронные Thunks
 export const fetchUsers = createAsyncThunk(
     "users/fetchUsers",
     async (_, { rejectWithValue }) => {
         try {
-            const response = await APIs.user.getUsers();
-            return response.data;
+            const response = await fetch("/api/users");
+            if (!response.ok) throw new Error("Ошибка загрузки");
+            return await response.json();
         } catch (error) {
-            return rejectWithValue(error.response?.data?.message || "Ошибка загрузки");
+            return rejectWithValue(error.message);
         }
     }
 );
 
 export const deleteUser = createAsyncThunk(
     "users/deleteUser",
-    async (id, { rejectWithValue }) => {
+    async (userId, { rejectWithValue }) => {
         try {
-            await APIs.user.deleteUsers(id)
-            return id;
+            await fetch(`/api/users/${userId}`, { method: "DELETE" });
+            return userId; // Возвращаем ID для удаления из стейта
         } catch (error) {
             return rejectWithValue(error.message);
         }
@@ -29,20 +29,20 @@ export const deleteUser = createAsyncThunk(
 export const updateUserRole = createAsyncThunk(
     "users/updateUserRole",
     async ({ userId, newRole }, { rejectWithValue }) => {
-      try {
-        await APIs.user.updateUsers(userId, { role: newRole });
-        return { userId, newRole };
-      } catch (error) {
-        console.error("Update error details:", {
-          config: error.config,
-          response: error.response
-        });
-        return rejectWithValue(error.response?.data?.message || error.message);
-      }
+        try {
+            await fetch(`/api/users/${userId}/role`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ role: newRole }),
+            });
+            return { userId, newRole };
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
     }
-  );
+);
 
-
+// Стейт и редьюсеры
 const usersSlice = createSlice({
     name: "users",
     initialState: {
@@ -50,7 +50,7 @@ const usersSlice = createSlice({
         loading: false,
         error: null,
     },
-    reducers: {},
+    reducers: {}, // Синхронные редьюсеры (если нужны)
     extraReducers: (builder) => {
         builder
             // Загрузка пользователей
@@ -75,22 +75,12 @@ const usersSlice = createSlice({
             // Изменение роли
             .addCase(updateUserRole.fulfilled, (state, action) => {
                 const { userId, newRole } = action.payload;
-                
-          
-                state.users = state.users.map(user => 
-                  user.id === userId ? { ...user, role: newRole } : user
-                );
-                
-                const index = state.users.findIndex(u => u.id === userId);
-                if (index !== -1) {
-                  state.users[index].role = newRole;
-                }
-              })
+                const user = state.users.find(user => user.id === userId);
+                if (user) user.role = newRole;
+            });
     },
 });
 
 export const selectAllUsers = (state) => state.users.users;
-export const selectLoading = (state) => state.users.loading;
-export const selectError = (state) => state.users.error;
 
 export default usersSlice.reducer;

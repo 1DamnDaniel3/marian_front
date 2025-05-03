@@ -9,3 +9,6 @@ export {
 } from './customTours'
 export { Reviews } from './reviews'
 export { AuthPage } from './authpage'
+export { ManageUsers } from './manageUsers'
+export { ManageTourPage } from './manageTourPage'
+
