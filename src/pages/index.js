@@ -11,4 +11,5 @@ export { Reviews } from './reviews'
 export { AuthPage } from './authpage'
 export { ManageUsers } from './manageUsers'
 export { ManageTourPage } from './manageTourPage'
+export { Contacts } from './contacts'
 

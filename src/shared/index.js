@@ -10,5 +10,6 @@ export {
     DefaultInput,
     ValidationError,
     Modal,
+    Map,
 } from './ui'
 export {validateEmail, validatePassword, checkForMinLen} from './lib'

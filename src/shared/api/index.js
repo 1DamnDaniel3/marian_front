@@ -1,6 +1,7 @@
 import { toursApi, activityApi, regionApi,
      customTourApi, reviewApi, userApi,
-      applicationApi, tourActivitiesApi, } from '../../entities'
+      applicationApi, tourActivitiesApi,
+      contactsApi } from '../../entities'
 
 
 export const APIs = {
@@ -12,4 +13,5 @@ export const APIs = {
     user: userApi,
     application: applicationApi,
     tourActivity: tourActivitiesApi,
+    contacts: contactsApi,
 }

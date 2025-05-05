@@ -10,3 +10,4 @@ export {
     SetUsers, usersReducer
 } from './user'
 export {ManageTours, toursReducer} from './admin'
+export { SetContactsForm } from './contacts'

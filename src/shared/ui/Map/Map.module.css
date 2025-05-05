@@ -1,0 +1,33 @@
+.Map {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding: 20px;
+    height: 400px;
+    width: 100%;
+    
+    /* Тень (по умолчанию) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    /* Плавные переходы для анимации */
+    transition: all 0.3s ease-in-out;
+    
+    /* Небольшой подъем (z-index) для правильного отображения тени */
+    position: relative;
+    z-index: 1;
+    
+    /* Опционально: фон и скругление углов */
+    background: white;
+    border-radius: 8px;
+}
+
+.Map:hover {
+    /* Усиленная тень при наведении */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    
+    /* Эффект поднятия (можно комбинировать с transform) */
+    transform: translateY(-4px);
+    
+    /* Увеличение z-index для уверенности */
+    z-index: 2;
+}

@@ -57,8 +57,9 @@ export const LoginForm = () => {
             setWarningText(0);
             const response = await loginApi(formData);
             if (response?.status === 200) {
-                console.log("Успешный вход:", response.data);
-                const token = response.data.user; 
+                const token = response.data.user; // передаём в AuthContext -> loginSuccess -> user
+                console.log("ПЕРЕДАНО В КОНТЕКСТ",token)
+
                 login(token); 
                 navigate('/Home');
             } else {
