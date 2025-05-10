@@ -2,6 +2,7 @@ import { HeroBlock, Map } from '../../../shared'
 import { MainFooter, MainHeader } from '../../../widgets'
 import { SetContactsForm } from '../../../features'
 import image from '../../../shared/assets/image.png'
+import ico1 from '../assets/image.png'
 import s from './Contacts.module.css'
 
 export const Contacts = () => {
@@ -19,7 +20,7 @@ export const Contacts = () => {
                         
                         <div className={s.contactItem}>
                             <div className={s.iconWrapper}>
-                                <i className={`fas fa-map-marker-alt ${s.icon}`}></i>
+                                <img src={ico1} alt={ico1} className={` ${s.icon}`}></img>
                             </div>
                             <div>
                                 <h4 className={s.contactTitle}>Адрес офиса</h4>
@@ -29,7 +30,7 @@ export const Contacts = () => {
 
                         <div className={s.contactItem}>
                             <div className={s.iconWrapper}>
-                                <i className={`fas fa-phone-alt ${s.icon}`}></i>
+                                <img src={ico1} alt={ico1} className={`${s.icon}`}></img>
                             </div>
                             <div>
                                 <h4 className={s.contactTitle}>Телефон</h4>
@@ -39,7 +40,7 @@ export const Contacts = () => {
 
                         <div className={s.contactItem}>
                             <div className={s.iconWrapper}>
-                                <i className={`fas fa-envelope ${s.icon}`}></i>
+                                <img src={ico1} alt={ico1} className={`fas fa-envelope ${s.icon}`}></img>
                             </div>
                             <div>
                                 <h4 className={s.contactTitle}>Email</h4>
@@ -49,7 +50,7 @@ export const Contacts = () => {
 
                         <div className={s.contactItem}>
                             <div className={s.iconWrapper}>
-                                <i className={`fas fa-clock ${s.icon}`}></i>
+                                <img src={ico1} alt={ico1} className={`fas fa-clock ${s.icon}`}></img>
                             </div>
                             <div>
                                 <h4 className={s.contactTitle}>Часы работы</h4>
